@@ -1,0 +1,11 @@
+<b>{mivchan_acharon_dt}</b> : תאריך מבחן רכב (טסט)
+<b>{tokef_dt}</b> : תוקף רישיון רכב
+
+<b>{shnat_yitzur}</b> : שנת יצור
+<b>{tozeret_nm}</b> : שם תוצר
+{tzeva_cd} : מספר צבע
+{tzeva_rechev} : צבע רכב 
+
+{kinuy_mishari} :  כינוי מסחרי
+{ramat_gimur} : רמת גימור
+{sug_degem} : סוג דגם
