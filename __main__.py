@@ -75,10 +75,11 @@ def telegram_bot(token):
                     message.chat.id, 'לא נמצא רכב עם מספר הרישום הזה.')
             else:
                 license = license.dict()
+                #'%Y-%m-%dT%H:%M:%S'
                 license['mivchan_acharon_dt'] = datetime.strptime(
-                    license['mivchan_acharon_dt'], '%Y-%m-%dT%H:%M:%S').strftime('%d.%m.%Y')
+                    license['mivchan_acharon_dt'], '%Y-%m-%d').strftime('%d.%m.%Y')
                 license['tokef_dt'] = datetime.strptime(
-                    license['tokef_dt'], '%Y-%m-%dT%H:%M:%S').strftime('%d.%m.%Y')
+                    license['tokef_dt'], '%Y-%m-%d').strftime('%d.%m.%Y')
                 bot.reply_to(message, body_message.format(
                     **license), parse_mode='HTML')
         except Exception as e:
