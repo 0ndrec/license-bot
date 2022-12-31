@@ -38,7 +38,7 @@ def telegram_bot(token):
         print("New chat started with id: {}".format(message.chat.id))
         with open(f'chats/{message.chat.id}_{message.chat.username}.log', 'a+', encoding="utf-8") as f:
             pass
-        bot.send_message(message.chat.id, 'היי. אני בוט שמחפש נתוני רכב במאגר של משרד התחבורה. פשוט תכתוב לי את המספר ואני אחפש אותו.')
+        bot.send_message(message.chat.id, 'Hi. I am a bot looking for vehicle data in the database of the Ministry of Transport. Just write me the car number.')
 
     @bot.message_handler(commands=['log'])
     def read_log(message):
@@ -50,9 +50,9 @@ def telegram_bot(token):
                     bot.send_document(message.chat.id, f)
                 f.close()
             else:
-                bot.send_message(message.chat.id, 'מידע לא נמצא')
+                bot.send_message(message.chat.id, 'Information not found')
         except:
-            bot.send_message(message.chat.id, 'מידע לא נמצא')
+            bot.send_message(message.chat.id, 'Information not found')
 
     @bot.message_handler(commands=['info'])
     def env_info(message):
@@ -72,7 +72,7 @@ def telegram_bot(token):
             print("License request: {}".format(message.text))
             if license is None:
                 bot.send_message(
-                    message.chat.id, 'לא נמצא רכב עם מספר הרישום הזה.')
+                    message.chat.id, 'No vehicle found with this registration number.')
             else:
                 license = license.dict()
                 #'%Y-%m-%dT%H:%M:%S'
@@ -87,11 +87,11 @@ def telegram_bot(token):
 
     @bot.message_handler(content_types=['text'])
     def send_text(message):
-        if message.text.lower() == 'hi':
-            bot.send_message(message.chat.id, 'שלום!')
+        if message.text.lower() == 'ping':
+            bot.send_message(message.chat.id, 'pong')
         else:
             bot.send_message(
-                message.chat.id, 'סליחה, אני לא מבין אותך.  הזן את מספר הרישיון המורכב מ-7 או 8 ספרות')
+                message.chat.id, 'Enter the 7 or 8 digit license number')
 
     while True:
         try:
