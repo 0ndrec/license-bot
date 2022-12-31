@@ -1,11 +1,10 @@
-<b>{mivchan_acharon_dt}</b> : תאריך מבחן רכב (טסט)
-<b>{tokef_dt}</b> : תוקף רישיון רכב
+Vehicle test date: <b>{mivchan_acharon_dt}</b>
+Vehicle license validity: <b>{tokef_dt}</b>
 
-<b>{shnat_yitzur}</b> : שנת יצור
-<b>{tozeret_nm}</b> : שם תוצר
-{tzeva_cd} : מספר צבע
-{tzeva_rechev} : צבע רכב 
+Year of manufacture: <b>{shnat_yitzur}</b>
+Product name: <b>{tozeret_nm}</b>
+Color: {tzeva_cd} / {tzeva_rechev}
 
-{kinuy_mishari} :  כינוי מסחרי
-{ramat_gimur} : רמת גימור
-{sug_degem} : סוג דגם
+Trade name: {kinuy_mishari}
+Comfort class: {ramat_gimur}
+Model type: {sug_degem}
