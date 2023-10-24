@@ -9,16 +9,16 @@ source = 'https://data.gov.il/api/3/action/datastore_search?resource_id=053cea08
 
 
 class Car(BaseModel):
-    mispar_rechev: str
+    mispar_rechev: any
     tozeret_nm: str
     kinuy_mishari: str
     ramat_gimur: str
-    shnat_yitzur: str
+    shnat_yitzur: any
     mivchan_acharon_dt: str
     tokef_dt: str
-    tzeva_cd: str
+    tzeva_cd: any
     sug_degem: str
-    rank: str
+    rank: any
     tzeva_rechev: str
 
 
