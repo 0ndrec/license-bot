@@ -38,5 +38,6 @@ def get(license_number):
         else:
             return None
 
-    except:
+    except Exception as e:
+        print(e)
         return None

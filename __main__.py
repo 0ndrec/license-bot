@@ -73,6 +73,7 @@ def telegram_bot(token):
                 f.write(f'{time}, {message.text}\n')
             license = get(message.text)
             print("License request: {}".format(message.text))
+            print("License response: {}".format(license))
             if license is None:
                 bot.send_message(
                     message.chat.id, 'No vehicle found with this registration number.')
