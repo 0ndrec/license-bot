@@ -47,7 +47,10 @@ def telegram_bot(token):
                 log = f.read()
             if len(log) > 0:
                 with open(f'chats/{message.chat.id}_{message.chat.username}.log', 'rb') as f:
-                    bot.send_document(message.chat.id, f)
+                    # Read last 5 lines of the file, and send them to the user
+                    lines = f.readlines()[-5:]
+                    bot.send_message(message.chat.id, f'Last 5 requests:\n{"".join(lines).decode("utf-8")}')
+                    #bot.send_document(message.chat.id, f)
                 f.close()
             else:
                 bot.send_message(message.chat.id, 'Information not found')
